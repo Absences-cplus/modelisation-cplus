@@ -1,0 +1,9 @@
+create table Absence(id AutoIncrement primary key, cause_absence varchar(50),
+                  seance int,stagiaire int,date_absence date ,
+                  autorisation varchar(1));
+
+alter table Absence add constraint
+           fk_stagiaire foreign key(stagiaire) references stagiaire(id)
+
+alter table Absence add constaint
+           fk_seance foreign key(seance) refernces seance(id)
