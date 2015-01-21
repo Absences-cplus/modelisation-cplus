@@ -1,0 +1,4 @@
+create table Seance(id AutoIncrement  primary key,titre varchar(50),objectif memo,date_seance date,heuredebut time,heurefin time);
+create table Absence(id autoincrement primary key,stagiaire_id int ,seance_id int,date_absence date,Autorisation int,Cause_absence memo)
+alter table Absence add constraint fk_stagiaire foreign key(stagiaire_id)references Stagiaires(id)
+alter table Absence add constraint fk_seance foreign key(seance_id)references Seance(id)
